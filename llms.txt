@@ -1,0 +1,157 @@
+# Online File Viewer
+
+> Free online viewer for Excel, CSV, JSON, YAML, Markdown and HTML — with search, column statistics, a JSON formatter and shareable links. No upload.
+
+- URL: https://online-file-viewer.github.io/
+- Type: free client-side web tool (no sign-up, no upload, works offline)
+- Source code: https://github.com/online-file-viewer/online-file-viewer.github.io (open source)
+
+## About
+
+Online File Viewer is a free, browser-based viewer for the files you most often need to read but not edit: Excel spreadsheets, CSV, JSON, YAML, Markdown and HTML. Paste your text or drop a file and it detects the format automatically — spreadsheets become a sortable table, JSON becomes a collapsible tree you can format or minify, Markdown renders as formatted text, and HTML previews safely in a sandbox. Everything runs locally in your browser, so nothing is uploaded to a server and the tool keeps working offline.
+
+## How to use
+
+1. Paste your text into the box, or drop a file anywhere on the page (you can also click Open file).
+2. The format is detected automatically — CSV, JSON, YAML, Markdown or HTML — and the preview appears instantly.
+3. Use the Auto / Markdown / CSV / JSON / HTML / YAML buttons if you want to force a specific format.
+4. Sort CSV columns, filter rows, search JSON keys, format or sort JSON and YAML — then copy, download, or share the document as a link.
+
+## CSV viewer — read spreadsheets without a spreadsheet
+
+Paste or drop a .csv or .tsv file and it becomes a clean, readable table with a sticky header row. Commas, semicolons and tabs are all detected automatically, and quoted fields containing commas or line breaks are parsed correctly. Click any column heading to sort the rows — numbers sort as numbers, text sorts alphabetically, and clicking again reverses the order. It is the fastest way to check an export without opening Excel, Numbers or Google Sheets.
+
+## JSON viewer — a readable, collapsible tree
+
+Paste minified or badly formatted JSON and it becomes an indented, colour-coded tree you can actually read. Objects and arrays collapse and expand so you can drill into a deeply nested API response without scrolling past thousands of lines, and each branch shows how many keys or items it contains. If the JSON is invalid, you get the error message and the line number where parsing failed — a quick way to find a stray comma or missing bracket.
+
+## Markdown viewer with live preview
+
+Paste Markdown and see it rendered as you type, side by side with the source, with two-way synchronised scrolling. Headings, bold and italic, links, images, blockquotes, nested bullet and numbered lists, task lists, GitHub-flavoured tables with column alignment, inline code and fenced code blocks are all supported, and YAML front matter is recognised and hidden. It is handy for previewing a README, checking formatting before you commit, or simply reading a .md file that your editor shows as plain text.
+
+## Mermaid diagrams, LaTeX math and syntax highlighting
+
+Fenced mermaid blocks are drawn as real diagrams — flowcharts, sequence diagrams, class and state diagrams, Gantt charts and more — and LaTeX written between $$ delimiters is typeset as proper mathematical notation. Code blocks are syntax highlighted for JavaScript, Python, HTML, SQL, shell and other common languages. The diagram and maths engines are self-hosted rather than pulled from a third-party CDN, and they are downloaded only when a document actually contains a diagram or a formula, so an ordinary Markdown or CSV file still loads in a few kilobytes.
+
+## Rich HTML inside Markdown
+
+Real-world Markdown often falls back to HTML for things the syntax cannot express, and this viewer renders it: multi-row table headers using rowspan and colspan, keyboard keys with the kbd tag, highlighted text, underlines, superscript and subscript for formulas like H₂O and x², abbreviations with hover tooltips, centred or right-aligned blocks, and images with explicit dimensions. Everything passes through a strict allowlist first — scripts, event handlers, iframes, forms and unsafe URLs are stripped — so you can safely paste a document from anywhere.
+
+## JSON formatter — beautify or minify in one click
+
+Paste minified JSON and press Format to pretty-print it with two-space indentation, or press Minify to strip every unnecessary character before shipping it. The formatter uses your browser’s native JSON engine, so output is always standards-exact, and because it rewrites the text in the editor you can copy the result straight back out or download it as a .json file. Validation is built in: if the input is not valid JSON you get the error and line number instead of a silent failure.
+
+## HTML viewer with a safe sandboxed preview
+
+Paste an HTML file — or drop a .html, .htm or .svg file — and see it rendered as a real page. The preview runs inside a fully sandboxed frame: styles, layout, images and inline SVG all work, but scripts, forms, popups and navigation are blocked by the browser’s sandbox, so viewing an email template or a page you do not trust cannot execute any code. It is a quick way to check a saved page, an HTML email, or a generated report without opening it live.
+
+## Excel viewer — open .xlsx without Excel
+
+Drop an .xlsx, .xls or .ods workbook and it opens as a clean, sortable table — no Microsoft Office, no Google account, no upload. Multi-sheet workbooks show a sheet switcher, and every table feature works on spreadsheet data: click a column to sort, filter rows as you type, read the per-column statistics, and export the result as CSV. The spreadsheet engine is self-hosted and downloaded only when you actually open an Excel file, and like everything else it runs entirely in your browser — safe for payroll exports, client data and anything else you would not upload to a random website.
+
+## Column statistics and smart tables
+
+Tables think along with you. Columns are type-detected — numbers align right with tabular figures — and a statistics row under every table shows the sum, average and range of each numeric column and the distinct-value count of each text column, recalculated live as you filter. JSON and YAML arrays of records get a Table button that turns an API response into the same sortable, filterable grid, exportable as CSV.
+
+## YAML viewer and validator
+
+Paste a YAML file — a Kubernetes manifest, a CI pipeline, a docker-compose file or any config — and it renders as the same collapsible tree as JSON, with validation built in: syntax errors report the line number. The Format button re-emits clean, consistently indented YAML, and Sort A–Z alphabetises the keys. The YAML engine is self-hosted and loaded only when a YAML document is detected.
+
+## Search, filter and share
+
+A filter box searches as you type: in a CSV it hides non-matching rows and shows “42 of 10,000 rows”, and in JSON or YAML it highlights matching keys and values and expands the branches that contain them. Very large tables render the first 2,000 rows instantly with one click to show the rest. When you want a colleague to see the same document, Share compresses it into the link itself — the data lives in the URL fragment, which browsers never send to any server, so even shared documents stay private.
+
+## Private by design — nothing is uploaded
+
+This viewer has no server component. Files you open are read by your own browser with the File API and rendered locally, so nothing is ever transmitted, stored or logged, and there is no tracking code, no analytics and no cookies. That makes it safe for client exports, database dumps, API responses and anything else you would not want to hand to a random website. Once the page has loaded it also works with no internet connection at all.
+
+## Who uses it
+
+- Developers — inspect an API response or a config file without leaving the browser.
+- Analysts — peek at a CSV export before importing it into a spreadsheet or database.
+- Writers & documentation authors — preview a README or Markdown draft exactly as it will render.
+- Support & ops teams — open a log dump or data export on a machine with nothing installed.
+- Anyone on a locked-down or borrowed computer — read a file with no software to install and no account to create.
+
+## FAQ
+
+### Is this online file viewer free?
+Yes — completely free, with no sign-up, no account and no limit on how many files you open.
+
+### Are my files uploaded to a server?
+No. Files are read and rendered entirely inside your browser. Nothing is uploaded, stored or logged, and there is no tracking or analytics code on the page.
+
+### Which file formats can I view?
+Excel workbooks (.xlsx, .xls, .ods), CSV and TSV, JSON and JSONL, YAML, Markdown (.md) and HTML. Plain text files also work — they are shown as Markdown.
+
+### How does the automatic format detection work?
+It reads the structure of your text. A leading bracket or brace means JSON; headings, lists or code fences mean Markdown; consistent comma, semicolon or tab separated rows mean CSV; mostly key: value lines mean YAML; and a document made largely of tags is treated as HTML, even when it has no doctype. You can always override it with the Auto, Markdown, CSV, JSON, HTML and YAML buttons.
+
+### Can I sort a CSV file?
+Yes. Click any column header to sort by that column, and click it again to reverse the order. Numeric columns sort as numbers rather than as text.
+
+### What happens if my JSON is invalid?
+You get the parser error message and the line number where it failed, so you can find the missing comma, quote or bracket quickly.
+
+### How large a file can I open?
+Files up to 10 MB can be opened, and anything up to a few megabytes feels instant. Because everything runs in your browser, the practical ceiling depends on your device rather than on a server limit; very wide tables are capped at 2,000 displayed rows so the page stays responsive.
+
+### Does it work offline and on mobile?
+Yes. It works on phones, tablets and desktops, and once the page has loaded once it keeps working with no internet connection.
+
+### Can I edit files here as well as view them?
+You can edit the text in the input box and the preview updates live, but this is a viewer — there is no save. Copy the text back out when you are done.
+
+### Does it support Mermaid diagrams?
+Yes. A fenced code block marked mermaid is rendered as a diagram — flowcharts, sequence diagrams, class, state and entity diagrams, Gantt charts and more. The diagram engine is self-hosted and loaded only when your document actually contains one, so pages without diagrams stay tiny.
+
+### Can it render LaTeX maths?
+Yes. Anything written between $$ delimiters is typeset with KaTeX, both inline and as centred display equations. Like the diagram engine it is fetched only when a formula is present.
+
+### Does it render HTML written inside Markdown?
+Yes — tables with multi-row headers, kbd, mark, sub, sup, abbr, aligned divs and sized images all render. Anything outside a strict safe list, including scripts, event handlers, iframes and forms, is shown as plain text instead of being executed.
+
+### Is it safe to paste a document from an untrusted source?
+Yes. Markdown is escaped first and only a fixed list of harmless tags and attributes is re-enabled, so embedded scripts, inline event handlers and javascript: links cannot run. Nothing is uploaded either, so the document stays on your device.
+
+### Are code blocks syntax highlighted?
+Yes. Add a language after the opening fence — for example javascript, python, sql or html — and keywords, strings, numbers and comments are coloured. The highlighter is built in, so it costs no extra download.
+
+### Can I format or minify JSON?
+Yes. When valid JSON is detected, Format pretty-prints it with two-space indentation and Minify strips all whitespace. Both rewrite the editor text, so you can copy the result or download it as a .json file.
+
+### Can I view HTML files?
+Yes. HTML renders as a real page inside a fully sandboxed frame — styles and images work, but scripts, forms and popups are blocked, so nothing in the file can run. SVG files preview the same way.
+
+### Will I lose my work if I close the tab?
+No. Your text is saved automatically in your browser’s local storage and restored the next time you open the page. It stays on your device — use Clear to remove it.
+
+### Can I switch between dark and light mode?
+Yes. The viewer follows your system theme by default, and the toggle in the header switches it manually. Your choice is remembered.
+
+### Can I view and validate YAML files?
+Yes. YAML renders as a collapsible tree with validation — errors report the line number. Format re-emits clean YAML and Sort A–Z orders the keys alphabetically.
+
+### How do I search inside a file?
+Use the filter box above the preview. In CSV it hides rows that do not match and shows how many remain; in JSON and YAML it highlights matching keys and values and opens the branches containing them.
+
+### How does sharing work — is it still private?
+Share compresses your document into the link itself, after the # symbol. Browsers never send that fragment to any server, so the document travels inside the link from you to the recipient without touching ours or anyone else’s infrastructure.
+
+### Can I open Excel files without Microsoft Excel?
+Yes. Drop an .xlsx, .xls or .ods file and it opens as a sortable, filterable table with a sheet switcher for multi-sheet workbooks. The file is read entirely in your browser — nothing is uploaded — and you can export any sheet as CSV.
+
+### Can I see JSON as a table?
+Yes. When a JSON or YAML document is an array of records, a Table button appears: it renders the records as a sortable, filterable grid with column statistics, and exports as CSV.
+
+### Does it show column statistics?
+Yes. Every table ends with a statistics row: sum, average and min–max for numeric columns, distinct-value counts for text columns — recalculated live as you filter rows.
+
+### Can I save a document as a PDF?
+Yes. Press Print and choose “Save as PDF” in the print dialog — the preview prints as a clean document, without the editor or any interface around it.
+
+### What if my CSV shows strange characters like â€™?
+That is an encoding mismatch. Files are decoded as UTF-8 first, and when that fails they are automatically re-decoded as Windows-1252, which fixes most older Excel and European exports.
+
+### Are there keyboard shortcuts?
+Yes: Ctrl/Cmd+O opens a file, Ctrl/Cmd+S downloads the output, and Ctrl/Cmd+Shift+F formats JSON or YAML. Esc leaves full-width preview.
