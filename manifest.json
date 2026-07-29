@@ -6,7 +6,7 @@
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#1f2328",
-  "description": "Free online viewer for Excel, CSV, JSON, YAML, Markdown and HTML — with search, column statistics, a JSON formatter and shareable links. No upload.",
+  "description": "Free online viewer for Excel, CSV, JSON, YAML, Markdown and HTML. Open several files at once in tabs, with search, column statistics and a JSON formatter. No upload.",
   "icons": [
     {
       "src": "/favicon.svg",

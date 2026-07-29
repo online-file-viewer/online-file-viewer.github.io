@@ -1,6 +1,6 @@
 # Online File Viewer
 
-> Free online viewer for Excel, CSV, JSON, YAML, Markdown and HTML — with search, column statistics, a JSON formatter and shareable links. No upload.
+> Free online viewer for Excel, CSV, JSON, YAML, Markdown and HTML. Open several files at once in tabs, with search, column statistics and a JSON formatter. No upload.
 
 - URL: https://online-file-viewer.github.io/
 - Type: free client-side web tool (no sign-up, no upload, works offline)
@@ -8,14 +8,19 @@
 
 ## About
 
-Online File Viewer is a free, browser-based viewer for the files you most often need to read but not edit: Excel spreadsheets, CSV, JSON, YAML, Markdown and HTML. Paste your text or drop a file and it detects the format automatically — spreadsheets become a sortable table, JSON becomes a collapsible tree you can format or minify, Markdown renders as formatted text, and HTML previews safely in a sandbox. Everything runs locally in your browser, so nothing is uploaded to a server and the tool keeps working offline.
+Online File Viewer is a free, browser-based viewer for the files you most often need to read but not edit: Excel spreadsheets, CSV, JSON, YAML, Markdown and HTML. Paste your text or drop a file and it detects the format automatically — spreadsheets become a sortable table, JSON becomes a collapsible tree you can format or minify, Markdown renders as formatted text, and HTML previews safely in a sandbox. You can open several files at once: each one gets its own tab, so you can switch between a spreadsheet, a config file and a README without losing your place. Everything runs locally in your browser, so nothing is uploaded to a server and the tool keeps working offline.
 
 ## How to use
 
 1. Paste your text into the box, or drop a file anywhere on the page (you can also click Open file).
 2. The format is detected automatically — CSV, JSON, YAML, Markdown or HTML — and the preview appears instantly.
-3. Use the Auto / Markdown / CSV / JSON / HTML / YAML buttons if you want to force a specific format.
-4. Sort CSV columns, filter rows, search JSON keys, format or sort JSON and YAML — then copy, download, or share the document as a link.
+3. Open more files — select several at once, or drop them together — and each one appears as its own tab above the editor. Click a tab to switch, or press Ctrl/Cmd+1 to Ctrl/Cmd+9.
+4. Use the Auto / Markdown / CSV / JSON / HTML / YAML buttons if you want to force a specific format.
+5. Sort CSV columns, filter rows, search JSON keys, format or sort JSON and YAML — then copy, download, or share the document as a link.
+
+## Open several files at once — one tab each
+
+Comparing two exports, or reading a config next to the README that explains it, should not mean opening the tool twice. Select several files in the Open dialog — or drop a whole handful onto the page — and each one opens in its own tab above the editor, named after the file. Every tab keeps its own text, its own detected format and its own Excel sheet selection, so switching back and forth costs nothing. Click a tab to switch, press Ctrl/Cmd+1 through Ctrl/Cmd+9 to jump straight to one (9 is always the last tab), Alt/Option+T for a new empty tab and Alt/Option+W to close the current one; the middle mouse button closes a tab the way it does in a browser. Drag tabs to reorder them, double-click a tab to rename it, and every open tab is restored the next time you come back to the page.
 
 ## CSV viewer — read spreadsheets without a spreadsheet
 
@@ -153,5 +158,20 @@ Yes. Press Print and choose “Save as PDF” in the print dialog — the previe
 ### What if my CSV shows strange characters like â€™?
 That is an encoding mismatch. Files are decoded as UTF-8 first, and when that fails they are automatically re-decoded as Windows-1252, which fixes most older Excel and European exports.
 
+### Can I open several files at the same time?
+Yes. Select more than one file in the Open dialog, or drop several files onto the page at once, and each opens in its own tab above the editor. Every tab remembers its own text, format and Excel sheet, and you can keep up to twelve open at a time.
+
+### How do I switch between open files?
+Click a tab, or press Ctrl/Cmd+1 to Ctrl/Cmd+9 — 9 always jumps to the last tab. Alt/Option+T opens a new empty tab and Alt/Option+W closes the current one; you can also click the × on a tab or close it with the middle mouse button.
+
+### Can I rename a tab?
+Yes. Double-click the tab label, type a new name and press Enter (Escape cancels). The extension is kept for you: renaming “Chart.csv” to “Q3” gives “Q3.csv”, while typing a full name like “Q3.txt” is used exactly as you wrote it. Clearing the field leaves the previous name untouched. Downloads take their name from the tab, but the extension always matches the format actually being exported, so a renamed tab can never produce a mismatched file.
+
+### Can I reorder the tabs?
+Yes. Drag a tab onto another one to move it there — the drop position is highlighted as you drag. The new order is remembered along with the tabs themselves.
+
+### Are the tabs still there when I come back?
+Yes. Every open tab, its name and which one was active are saved in your browser’s local storage and restored the next time you open the page. Nothing leaves your device — Clear empties the current tab.
+
 ### Are there keyboard shortcuts?
-Yes: Ctrl/Cmd+O opens a file, Ctrl/Cmd+S downloads the output, and Ctrl/Cmd+Shift+F formats JSON or YAML. Esc leaves full-width preview.
+Yes: Ctrl/Cmd+O opens files, Ctrl/Cmd+1 to Ctrl/Cmd+9 switch tabs, Alt/Option+T opens a new tab and Alt/Option+W closes one, Ctrl/Cmd+S downloads the output and Ctrl/Cmd+Shift+F formats JSON or YAML. Esc leaves full-width preview. Tab close and new tab use Alt/Option because browsers keep Ctrl/Cmd+W and Ctrl/Cmd+T for their own tabs.

@@ -1,12 +1,12 @@
 # Online File Viewer
 
-> Open Excel, CSV, JSON, YAML, Markdown and HTML files in your browser
+> Open Excel, CSV, JSON, YAML, Markdown and HTML — several files at once
 
 **[Open the tool → online-file-viewer.github.io](https://online-file-viewer.github.io/)**
 
 [![Online File Viewer — open Excel, CSV, Markdown, JSON and HTML files in your browser](og.jpg)](https://online-file-viewer.github.io/)
 
-Online File Viewer is a free, browser-based viewer for the files you most often need to read but not edit: Excel spreadsheets, CSV, JSON, YAML, Markdown and HTML. Paste your text or drop a file and it detects the format automatically — spreadsheets become a sortable table, JSON becomes a collapsible tree you can format or minify, Markdown renders as formatted text, and HTML previews safely in a sandbox. Everything runs locally in your browser, so nothing is uploaded to a server and the tool keeps working offline.
+Online File Viewer is a free, browser-based viewer for the files you most often need to read but not edit: Excel spreadsheets, CSV, JSON, YAML, Markdown and HTML. Paste your text or drop a file and it detects the format automatically — spreadsheets become a sortable table, JSON becomes a collapsible tree you can format or minify, Markdown renders as formatted text, and HTML previews safely in a sandbox. You can open several files at once: each one gets its own tab, so you can switch between a spreadsheet, a config file and a README without losing your place. Everything runs locally in your browser, so nothing is uploaded to a server and the tool keeps working offline.
 
 ## Why it is different
 
@@ -17,6 +17,7 @@ Online File Viewer is a free, browser-based viewer for the files you most often 
 
 ## Features
 
+- **Open several files at once** — one tab each
 - **CSV viewer** — read spreadsheets without a spreadsheet
 - **JSON viewer** — a readable, collapsible tree
 - **Markdown viewer with live preview**
@@ -34,8 +35,9 @@ Online File Viewer is a free, browser-based viewer for the files you most often 
 
 1. Paste your text into the box, or drop a file anywhere on the page (you can also click Open file).
 2. The format is detected automatically — CSV, JSON, YAML, Markdown or HTML — and the preview appears instantly.
-3. Use the Auto / Markdown / CSV / JSON / HTML / YAML buttons if you want to force a specific format.
-4. Sort CSV columns, filter rows, search JSON keys, format or sort JSON and YAML — then copy, download, or share the document as a link.
+3. Open more files — select several at once, or drop them together — and each one appears as its own tab above the editor. Click a tab to switch, or press Ctrl/Cmd+1 to Ctrl/Cmd+9.
+4. Use the Auto / Markdown / CSV / JSON / HTML / YAML buttons if you want to force a specific format.
+5. Sort CSV columns, filter rows, search JSON keys, format or sort JSON and YAML — then copy, download, or share the document as a link.
 
 ## Who it is for
 
