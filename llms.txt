@@ -12,7 +12,7 @@ Online File Viewer is a free, browser-based viewer for the files you most often 
 
 ## How to use
 
-1. Paste your text into the box, or drop a file anywhere on the page (you can also click Open file).
+1. Paste your text into the box, or drop a file anywhere on the page (you can also click Open files in the tab bar).
 2. The format is detected automatically — CSV, JSON, YAML, Markdown or HTML — and the preview appears instantly.
 3. Open more files — select several at once, or drop them together — and each one appears as its own tab above the editor. Click a tab to switch, or press Ctrl/Cmd+1 to Ctrl/Cmd+9.
 4. Use the Auto / Markdown / CSV / JSON / HTML / YAML buttons if you want to force a specific format.
