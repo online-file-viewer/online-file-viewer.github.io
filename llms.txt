@@ -8,7 +8,7 @@
 
 ## About
 
-Online File Viewer is a free, browser-based viewer for the files you most often need to read but not edit: Excel spreadsheets, CSV, JSON, YAML, Markdown and HTML. Paste your text or drop a file and it detects the format automatically — spreadsheets become a sortable table, JSON becomes a collapsible tree you can format or minify, Markdown renders as formatted text, and HTML previews safely in a sandbox. You can open several files at once: each one gets its own tab, so you can switch between a spreadsheet, a config file and a README without losing your place. Everything runs locally in your browser, so nothing is uploaded to a server and the tool keeps working offline.
+Online File Viewer is a free, browser-based viewer for the files you most often need to read but not edit: Excel spreadsheets, CSV, JSON, YAML, Markdown and HTML. Paste your text or drop a file and it detects the format automatically — spreadsheets become a sortable table, JSON becomes a collapsible tree you can format or minify, Markdown renders as formatted text, and HTML previews safely in a sandbox. You can open several files at once: each one gets its own tab, so you can switch between a spreadsheet, a config file and a README without losing your place. A document in a language you do not read can be translated in place with Google Translate — the only feature that sends anything anywhere, and only when you ask for it. Everything else runs locally in your browser, so nothing is uploaded to a server and the tool keeps working offline.
 
 ## How to use
 
@@ -17,6 +17,7 @@ Online File Viewer is a free, browser-based viewer for the files you most often 
 3. Open more files — select several at once, or drop them together — and each one appears as its own tab above the editor. Click a tab to switch, or press Ctrl/Cmd+1 to Ctrl/Cmd+9.
 4. Use the Auto / Markdown / CSV / JSON / HTML / YAML buttons if you want to force a specific format.
 5. Sort CSV columns, filter rows, search JSON keys, format or sort JSON and YAML — then copy, download, or share the document as a link.
+6. To read a document written in another language, open the Translate menu above the preview and pick one of 43 languages — the preview is translated in place, and the language chip beside it flips back to the original.
 
 ## Open several files at once — one tab each
 
@@ -66,9 +67,13 @@ Paste a YAML file — a Kubernetes manifest, a CI pipeline, a docker-compose fil
 
 A filter box searches as you type: in a CSV it hides non-matching rows and shows “42 of 10,000 rows”, and in JSON or YAML it highlights matching keys and values and expands the branches that contain them. Very large tables render the first 2,000 rows instantly with one click to show the rest. When you want a colleague to see the same document, Share compresses it into the link itself — the data lives in the URL fragment, which browsers never send to any server, so even shared documents stay private.
 
+## Translate a file into another language
+
+A supplier sends a spreadsheet in Spanish, a config file arrives commented in German, a README is written in Japanese. Open the Translate menu above the preview, pick one of 43 languages, and the document is translated in place with Google Translate — no copy-pasting into another tab, and no losing the file’s shape. A CSV keeps every column and row, and numbers and dates are left alone; JSON keeps its keys, its structure and its URLs and only the string values change; YAML keeps its keys, comments and indentation; Markdown keeps its headings, tables, links and lists, and code inside fenced blocks is never touched. Because the translation is rebuilt as a real document rather than as patched-up text, everything else still works on it: sort the translated table, filter it, expand the tree, copy it or export it as CSV, JSON or PDF. Your editor keeps the original the whole time, and the language chip beside it flips between the two.
+
 ## Private by design — nothing is uploaded
 
-This viewer has no server component. Files you open are read by your own browser with the File API and rendered locally, so nothing is ever transmitted, stored or logged, and there is no tracking code, no analytics and no cookies. That makes it safe for client exports, database dumps, API responses and anything else you would not want to hand to a random website. Once the page has loaded it also works with no internet connection at all.
+This viewer has no server component. Files you open are read by your own browser with the File API and rendered locally, so nothing is ever transmitted, stored or logged, and there is no tracking code, no analytics and no cookies. That makes it safe for client exports, database dumps, API responses and anything else you would not want to hand to a random website. Once the page has loaded it also works with no internet connection at all. The single exception is the optional Translate button: choosing a language sends that document’s text to Google Translate, because translation cannot happen offline. Nothing is sent until you pick a language, the menu says so before you do, and if you never use it nothing ever leaves your browser — so keep confidential files untranslated.
 
 ## Who uses it
 
@@ -84,7 +89,16 @@ This viewer has no server component. Files you open are read by your own browser
 Yes — completely free, with no sign-up, no account and no limit on how many files you open.
 
 ### Are my files uploaded to a server?
-No. Files are read and rendered entirely inside your browser. Nothing is uploaded, stored or logged, and there is no tracking or analytics code on the page.
+No. Files are read and rendered entirely inside your browser. Nothing is uploaded, stored or logged, and there is no tracking or analytics code on the page. The one exception is the optional Translate button — picking a language sends that document’s text to Google Translate, and nothing is sent unless you choose to.
+
+### Can I translate a file into another language?
+Yes. Open the Translate menu above the preview and pick a language, and the document is translated in place with Google Translate — 43 languages, with the source language detected automatically. The translation replaces the preview while your editor keeps the original, and the language chip beside it switches between the two.
+
+### Does translating upload my file?
+Translation is the only part of this tool that talks to a server. When you pick a language, the text of that document — not the file itself — is sent to Google Translate and the translation comes back to your browser. Nothing is sent until you choose a language, and if you never use the feature nothing ever leaves your device. For confidential files, simply do not translate them.
+
+### Does translating a CSV or JSON file break its structure?
+No. The document is rebuilt in its own format rather than as loose text, so a CSV keeps every row and column, JSON stays valid JSON with its keys and URLs untouched, YAML keeps its keys, comments and indentation, and Markdown keeps its headings, tables and links. Numbers, dates and code inside fenced blocks are left exactly as they were, and you can still sort, filter, copy and export the translated document.
 
 ### Which file formats can I view?
 Excel workbooks (.xlsx, .xls, .ods), CSV and TSV, JSON and JSONL, YAML, Markdown (.md) and HTML. Plain text files also work — they are shown as Markdown.

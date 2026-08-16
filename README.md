@@ -6,7 +6,7 @@
 
 [![Online File Viewer — open Excel, CSV, Markdown, JSON and HTML files in your browser](og.jpg)](https://online-file-viewer.github.io/)
 
-Online File Viewer is a free, browser-based viewer for the files you most often need to read but not edit: Excel spreadsheets, CSV, JSON, YAML, Markdown and HTML. Paste your text or drop a file and it detects the format automatically — spreadsheets become a sortable table, JSON becomes a collapsible tree you can format or minify, Markdown renders as formatted text, and HTML previews safely in a sandbox. You can open several files at once: each one gets its own tab, so you can switch between a spreadsheet, a config file and a README without losing your place. Everything runs locally in your browser, so nothing is uploaded to a server and the tool keeps working offline.
+Online File Viewer is a free, browser-based viewer for the files you most often need to read but not edit: Excel spreadsheets, CSV, JSON, YAML, Markdown and HTML. Paste your text or drop a file and it detects the format automatically — spreadsheets become a sortable table, JSON becomes a collapsible tree you can format or minify, Markdown renders as formatted text, and HTML previews safely in a sandbox. You can open several files at once: each one gets its own tab, so you can switch between a spreadsheet, a config file and a README without losing your place. A document in a language you do not read can be translated in place with Google Translate — the only feature that sends anything anywhere, and only when you ask for it. Everything else runs locally in your browser, so nothing is uploaded to a server and the tool keeps working offline.
 
 ## Why it is different
 
@@ -29,6 +29,7 @@ Online File Viewer is a free, browser-based viewer for the files you most often 
 - **Column statistics and smart tables**
 - **YAML viewer and validator**
 - **Search, filter and share**
+- **Translate a file into another language**
 - **Private by design** — nothing is uploaded
 
 ## How to use
@@ -38,6 +39,7 @@ Online File Viewer is a free, browser-based viewer for the files you most often 
 3. Open more files — select several at once, or drop them together — and each one appears as its own tab above the editor. Click a tab to switch, or press Ctrl/Cmd+1 to Ctrl/Cmd+9.
 4. Use the Auto / Markdown / CSV / JSON / HTML / YAML buttons if you want to force a specific format.
 5. Sort CSV columns, filter rows, search JSON keys, format or sort JSON and YAML — then copy, download, or share the document as a link.
+6. To read a document written in another language, open the Translate menu above the preview and pick one of 43 languages — the preview is translated in place, and the language chip beside it flips back to the original.
 
 ## Who it is for
 
@@ -59,19 +61,19 @@ A service worker caches the page so it keeps working offline. Shared links carry
 
 <details><summary>Is this online file viewer free?</summary><br>Yes — completely free, with no sign-up, no account and no limit on how many files you open.</details>
 
-<details><summary>Are my files uploaded to a server?</summary><br>No. Files are read and rendered entirely inside your browser. Nothing is uploaded, stored or logged, and there is no tracking or analytics code on the page.</details>
+<details><summary>Are my files uploaded to a server?</summary><br>No. Files are read and rendered entirely inside your browser. Nothing is uploaded, stored or logged, and there is no tracking or analytics code on the page. The one exception is the optional Translate button — picking a language sends that document’s text to Google Translate, and nothing is sent unless you choose to.</details>
+
+<details><summary>Can I translate a file into another language?</summary><br>Yes. Open the Translate menu above the preview and pick a language, and the document is translated in place with Google Translate — 43 languages, with the source language detected automatically. The translation replaces the preview while your editor keeps the original, and the language chip beside it switches between the two.</details>
+
+<details><summary>Does translating upload my file?</summary><br>Translation is the only part of this tool that talks to a server. When you pick a language, the text of that document — not the file itself — is sent to Google Translate and the translation comes back to your browser. Nothing is sent until you choose a language, and if you never use the feature nothing ever leaves your device. For confidential files, simply do not translate them.</details>
+
+<details><summary>Does translating a CSV or JSON file break its structure?</summary><br>No. The document is rebuilt in its own format rather than as loose text, so a CSV keeps every row and column, JSON stays valid JSON with its keys and URLs untouched, YAML keeps its keys, comments and indentation, and Markdown keeps its headings, tables and links. Numbers, dates and code inside fenced blocks are left exactly as they were, and you can still sort, filter, copy and export the translated document.</details>
 
 <details><summary>Which file formats can I view?</summary><br>Excel workbooks (.xlsx, .xls, .ods), CSV and TSV, JSON and JSONL, YAML, Markdown (.md) and HTML. Plain text files also work — they are shown as Markdown.</details>
 
 <details><summary>How does the automatic format detection work?</summary><br>It reads the structure of your text. A leading bracket or brace means JSON; headings, lists or code fences mean Markdown; consistent comma, semicolon or tab separated rows mean CSV; mostly key: value lines mean YAML; and a document made largely of tags is treated as HTML, even when it has no doctype. You can always override it with the Auto, Markdown, CSV, JSON, HTML and YAML buttons.</details>
 
 <details><summary>Can I sort a CSV file?</summary><br>Yes. Click any column header to sort by that column, and click it again to reverse the order. Numeric columns sort as numbers rather than as text.</details>
-
-<details><summary>What happens if my JSON is invalid?</summary><br>You get the parser error message and the line number where it failed, so you can find the missing comma, quote or bracket quickly.</details>
-
-<details><summary>How large a file can I open?</summary><br>Files up to 10 MB can be opened, and anything up to a few megabytes feels instant. Because everything runs in your browser, the practical ceiling depends on your device rather than on a server limit; very wide tables are capped at 2,000 displayed rows so the page stays responsive.</details>
-
-<details><summary>Does it work offline and on mobile?</summary><br>Yes. It works on phones, tablets and desktops, and once the page has loaded once it keeps working with no internet connection.</details>
 
 ## Contributing
 
