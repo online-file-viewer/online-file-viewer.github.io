@@ -1,4 +1,4 @@
-const CACHE='online-file-viewer-c1e80024';
+const CACHE='online-file-viewer-f2d7b159';
 const CORE=['./','./index.html','./manifest.json'];
 self.addEventListener('install',function(e){e.waitUntil(caches.open(CACHE).then(function(c){return c.addAll(CORE)}).then(function(){return self.skipWaiting()}))});
 self.addEventListener('activate',function(e){e.waitUntil(caches.keys().then(function(keys){return Promise.all(keys.map(function(k){if(k!==CACHE)return caches.delete(k)}))}).then(function(){return self.clients.claim()}))});
